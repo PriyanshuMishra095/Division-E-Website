@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/icon" href="{% static 'images/sicsr.png' %}" />
+    <title>Division E</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="top">
+        <h1>Division E</h1>
+        {% if username %}
+        <div class="topbutton">
+            <a href="{% url 'logout' %}"><p>Logout from {{username}}
+            </p></a>
+        </div>
+        {% else %}
+        <div class="topbutton">
+            <a href="{% url 'sign-up' %}">
+                <p>Sign-Up</p>
+            </a>
+        </div>
+        {%endif%}
+    </section>
+
+    <header class="tm-header">
+        <a href="{% url 'index' %}"><img class="logo" src="{% static 'images/sicsr.png' %}" alt="sicsr image"></a>
+        <nav class="tm-nav">
+            <div>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'timetable' %}">Timetable</a></li>
+                    <li><a href="{% url 'notes' %}">Notes</a></li>
+                    <li><a href="{% url 'divisionlist' %}">Division List</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'userlist' %}">Userlist</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="tm-main">
+        <p>Login</p>
+    </section>
+    {% if signin %}
+    <p>Sign in successful, login to continue</p>
+    {% endif %}
+    <form action="" method="post">
+        <fieldset>
+            <fieldset>
+                <legend>
+                    <div class="image">
+                        <h2>SICSR Login</h2>
+                    </div>
+                </legend>
+                <table>
+                    <tr height="50">
+                        <td width="300"></td>
+                        <td width="330">
+                            <label for="username">Username<span style="color: red;">*</span></label>
+                        </td>
+                        <td>
+                            <input type="text"name="username" id="username" placeholder="Enter The Username" required />
+                        </td>
+                    </tr>
+                    <tr height="50">
+                        <td></td>
+                        <td>
+                            <label for="password">Password<span style="color: red;">*</span></label>
+                        </td>
+                        <td>
+                            <input type="password" name="password" id="password" placeholder="Enter Password" required />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <center>
+                    <div class="buttons">
+                        <button id="create" class="cancel_btn">
+                            <h3><a href="home.html">Cancel</a></h3>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="create" class="submit_btn" onclick='check(), validate_prn()' type="submit">
+                            <h2>Login</h2>
+                        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="create" class="reset_btn" type="reset">
+                            <h3>Reset</h3>
+                        </button>
+                    </div>
+                </center><br />
+        
+            </fieldset>
+        </fieldset>
+    </form>
+    <footer class=" tm-footer">
+        <div class="tm-us">
+            <div class="footer">
+                <div>
+                    <h2 style="font-size: 30px;color: #fff;">SIU</h2>
+                    <p class="bold">SICSR: A Constituent of SIU</p>
+                    <ul>
+                        <li class='ml-0'><a href='https://siu.edu.in/symbiosis-board-of-management.php'
+                                target='_blank'>Board of Management</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/symbiosis-finance-committee.php'
+                                target='_blank'>Finance</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/planning-and-monitoring-board.php'
+                                target='_blank'>Planning and Monitoring Board</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/board-of-university-development.php'
+                                target='_blank'>Board of University Development</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/university-sports-board.php'
+                                target='_blank'>University
+                                of Sports Board</a></li><br>
+                        <li class='ml-0'><a href='https://www.siu.edu.in/student-affairs.php#antiRaggingPolicy'
+                                target='_blank'>Anti Ragging Notifications</a></li><br>
+                        <li class='ml-0'><a
+                                href='https://www.sicsr.ac.in/wp-content/uploads/2020/02/Hostel-Rules-and-Regulations.pdf'
+                                target='_blank'>Hostels</a></li><br>
+                        <li class='ml-0'><a href='https://www.siu.edu.in/news.php' target='_blank'>SIU News & Events</a>
+                        </li><br>
+                    </ul><br>
+                </div>
+                <div>
+                    <h2 style="font-size: 30px;color: #fff;"">Quick Links</h2><br>
+                    <ul>
+                        <li><a href=" https://www.sicsr.ac.in/privacy-policy/" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://siu.edu.in/education-loans.php" target="_blank">Other Education Loan
+                                Schemes</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tm-address">
+            <h2 style="font-size: 30px;color: #fff;">Contact</h2>
+            <ul class="footer" id="address">
+                <li>
+                    <p class="bold">Address</p>
+                    <p>Symbiosis Institute of Computer Studies and Research,
+                        1st Floor, Atur Centre, Gokhale Cross Road,
+                        Model Colony, Pune - 411016.</p><br>
+                </li>
+
+                <li>
+                    <p class="bold">Email</p>
+                    <p>admissions@sicsr.ac.in</p><br>
+                </li>
+
+                <li><i class="fa fa-phone fa-2x fa-li"></i>
+                    <p class="bold">Phone</p>
+                    <p>(+91) 020 - 2567 5601 / 03</p><br>
+                    <p class="bold">Admissions</p>
+                    <p>(+91) 9075088779</p>
+                    <p><small>(Available from 9:30 a.m. to 6:00 p.m.)</small></p>
+                </li>
+            </ul>
+            <ul id="grievance">
+
+                <li>
+                    <p><small>
+                            <font color="#ffffff">For any grievance, please drop an email to grievance@sicsr.ac.in.
+                            </font>
+                        </small> </p>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="tm-media">
+            <a href="https://www.facebook.com/" target="parent"> <img src="{% static 'images/facebook.png' %}"></a>
+            <a href="https://twitter.com/" target="parent"> <img src="{% static 'images/twitter.png' %}"> </a>
+            <a href="https://www.instagram.com/" target="parent"> <img src="{% static 'images/instagram.png' %}"> </a>
+
+        </div>
+    </footer>
+    <script src="{% static 'validation.js' %}"></script>
+</body>
+
+</html>

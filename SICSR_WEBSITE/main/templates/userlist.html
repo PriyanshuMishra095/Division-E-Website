@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <section class="tm-main">
+        <p>User List</p>
+    </section>
+    <center>
+    <table border="0" cellspacing="20">
+        <tr>
+            <th>Name</th>
+            <th>PRN</th>
+        </tr>
+    {%for user in userlist %}
+    <tr>
+        <td>{{user.fname}}</td>
+        <td>{{user.prn}}</td>
+
+        
+        <td><a href="{% url 'delete' user.id %}">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+</center>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <section class="tm-main">
+        <p>Timetable</p>
+    </section>
+    <section class="timetable">
+
+        <form>
+            <div class="timeform1">
+               
+                <embed src="{% static 'images/timetable.pdf' %}" type="application/pdf" frameBorder="0" scrolling="auto" height="850px"
+                    width="100%"></embed>
+                
+            </div>
+        </form>
+
+        <div class="vertical-line"> </div>
+
+        <div class="timeform2">
+            <div>
+                <div id="map"><iframe src="http://time-table.sicsr.ac.in/day.php?day=03&month=01&year=2022&area=1&room=29" style="border: 0;"
+                        width="600px" height="820px" style="border:0;" loading="lazy"></iframe></div>
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

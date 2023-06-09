@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <section class="tm-main">
+        <p>Division List</p>
+    </section>
+    <form>
+        <embed src="{%static 'images/division-list.pdf' %}" type="application/pdf" frameBorder="0" scrolling="auto" height="1200px"
+            width="100%"></embed>
+    </form>
+
+{% endblock %}

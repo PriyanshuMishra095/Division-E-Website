@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/icon" href="{% static 'images/sicsr.png' %}" />
+    <title>Division E</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="top">
+        <h1>Division E</h1>
+        {% if username %}
+        <div class="topbutton">
+            <a href="{% url 'logout' %}"><p>Logout from {{username}}
+            </p></a>
+        </div>
+        {% else %}
+        <div class="topbutton">
+            <a href="{% url 'login' %}">
+                <p>Login</p>
+            </a>
+        </div>
+        <div class="lowbutton">
+            <a href="{% url 'sign-up' %}">
+                <p>Sign-Up</p>
+            </a>
+        </div>
+        {%endif%}
+    </section>
+
+    <header class="tm-header">
+        <a href="{% url 'index' %}"><img class="logo" src="{% static 'images/sicsr.png' %}" alt="sicsr image"></a>
+        <nav class="tm-nav">
+            <div>
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'timetable' %}">Timetable</a></li>
+                    <li><a href="{% url 'notes' %}">Notes</a></li>
+                    <li><a href="{% url 'divisionlist' %}">Division List</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'userlist' %}">Userlist</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="tm-main">
+        <p>Notes</p>
+    </section>
+
+    <section class="tm-roomsection">
+        <div class="tm-room1">
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Ujwala Kolte</p>
+                </div>            
+            </div>
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/BCADivE-WebTechnology"><img class="tm-roomimage" src="{%static 'images/wt.png'%}"></center>
+            <p class="s">Web Technology</p></a>
+
+        </div>
+        <div class="tm-room1">
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Prathamesh Lahande</p>
+                </div>            
+            </div>
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/BCA-2021-24-SemI-DivE-IntroductiontoPython2"><img class="tm-roomimage" src="{%static 'images/py.png' %}"></center>
+            <p>Introduction to Python</p></a>
+
+        </div>
+        <div class="tm-room1">
+
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Poonam Pawar</p>
+                </div>            
+            </div>
+
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/BCA-IDivCDivEComputationalThinking"><img class="tm-roomimage" src="{%static 'images/ct.png' %}"></center>
+            <p>Computational Thinking</p></a>
+
+        </div>
+    </section>
+    <br />
+    <section class="tm-roomsection">
+        <div class="tm-room1">
+
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Rasika Deshmukh</p>
+                </div>            
+            </div>
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/104ElementsofMathematics_E"><img class="tm-roomimage" src="{%static 'images/mth.png' %}"></center>
+            <p class="s">Maths</p></a>
+
+        </div>
+        <div class="tm-room1">
+
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Kalyani Awate</p>
+                </div>            
+            </div>
+
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/EveryFriday_Busi.Comm.-BCA-Div.E/SitePages/Home.aspx"><img class="tm-roomimage" src="{%static 'images/bizz.png' %}"></center>
+            <p>Business Communication</p></a>
+
+        </div>
+        <div class="tm-room1">
+
+            <div class="tm-trans">
+                <div>
+                    <p>By</p>
+                    <p class="bold">Deepika Kumari</p>
+                </div>
+            </div>
+
+            <center><a href="https://sicsracin.sharepoint.com/sites/BCA_2020_23_DBMS_E"><img class="tm-roomimage" src="{%static 'images/dbms.png' %}"></center>
+            <p>Database Management System</p></a>
+
+        </div>
+    </section>
+    <br />
+
+    <footer class=" tm-footer">
+        <div class="tm-us">
+            <div class="footer">
+                <div>
+                    <h2 style="font-size: 30px;color: #fff;">SIU</h2>
+                    <p class="bold">SICSR: A Constituent of SIU</p>
+                    <ul>
+                        <li class='ml-0'><a href='https://siu.edu.in/symbiosis-board-of-management.php'
+                                target='_blank'>Board of Management</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/symbiosis-finance-committee.php'
+                                target='_blank'>Finance</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/planning-and-monitoring-board.php'
+                                target='_blank'>Planning and Monitoring Board</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/board-of-university-development.php'
+                                target='_blank'>Board of University Development</a></li><br>
+                        <li class='ml-0'><a href='https://siu.edu.in/university-sports-board.php'
+                                target='_blank'>University
+                                of Sports Board</a></li><br>
+                        <li class='ml-0'><a href='https://www.siu.edu.in/student-affairs.php#antiRaggingPolicy'
+                                target='_blank'>Anti Ragging Notifications</a></li><br>
+                        <li class='ml-0'><a
+                                href='https://www.sicsr.ac.in/wp-content/uploads/2020/02/Hostel-Rules-and-Regulations.pdf'
+                                target='_blank'>Hostels</a></li><br>
+                        <li class='ml-0'><a href='https://www.siu.edu.in/news.php' target='_blank'>SIU News & Events</a>
+                        </li><br>
+                    </ul><br>
+                </div>
+                <div>
+                    <h2 style="font-size: 30px;color: #fff;"">Quick Links</h2><br>
+                    <ul>
+                        <li><a href=" https://www.sicsr.ac.in/privacy-policy/" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://siu.edu.in/education-loans.php" target="_blank">Other Education Loan
+                                Schemes</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tm-address">
+            <h2 style="font-size: 30px;color: #fff;">Contact</h2>
+            <ul class="footer" id="address">
+                <li>
+                    <p class="bold">Address</p>
+                    <p>Symbiosis Institute of Computer Studies and Research,
+                        1st Floor, Atur Centre, Gokhale Cross Road,
+                        Model Colony, Pune - 411016.</p><br>
+                </li>
+
+                <li>
+                    <p class="bold">Email</p>
+                    <p>admissions@sicsr.ac.in</p><br>
+                </li>
+
+                <li><i class="fa fa-phone fa-2x fa-li"></i>
+                    <p class="bold">Phone</p>
+                    <p>(+91) 020 - 2567 5601 / 03</p><br>
+                    <p class="bold">Admissions</p>
+                    <p>(+91) 9075088779</p>
+                    <p><small>(Available from 9:30 a.m. to 6:00 p.m.)</small></p>
+                </li>
+            </ul>
+            <ul id="grievance">
+
+                <li>
+                    <p><small>
+                            <font color="#ffffff">For any grievance, please drop an email to grievance@sicsr.ac.in.
+                            </font>
+                        </small> </p>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="tm-media">
+            <a href="https://www.facebook.com/" target="parent"> <img src="{% static 'images/facebook.png' %}"></a>
+            <a href="https://twitter.com/" target="parent"> <img src="{% static 'images/twitter.png' %}"> </a>
+            <a href="https://www.instagram.com/" target="parent"> <img src="{% static 'images/instagram.png' %}"> </a>
+
+        </div>
+    </footer>
+    <script src="{% static 'validation.js' %}"></script>
+</body>
+
+</html>

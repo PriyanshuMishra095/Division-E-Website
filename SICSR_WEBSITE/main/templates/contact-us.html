@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+    <section class="tm-main">
+        <p>Contact Us</p>
+    </section>
+
+    <section class="tm-booking">
+
+        <form>
+            <div class="tm-form1">
+                <table>
+                <tr height="50">
+                    <td width="100">
+                        <label for="name">Name<span style="color: red;">*</span></label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Enter Your Name" required />
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>
+                        <label for="prn">PRN<span style="color: red;">*</span></label>
+                    </td>
+                    <td>
+                        <input type="number" id="prn" placeholder="Enter Collage PRN" required />
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>
+                        <label for="email">Email<span style="color: red;">*</span></label>
+                    </td>
+                    <td>
+                        <input type="email" id=email" placeholder="Enter Email-id" onkeyup="validate_email()" required />
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>
+                        <label for="message">Message</label>
+                    </td>
+                    <td>
+                        <textarea placeholder="Your message..." rows="4" cols="21"></textarea>
+                    </td>
+                </tr>
+                
+                <tr>
+                   <td colspan=2> <center><input type="submit" id="sub2" value="Send" onclick='sent()'></center></td>
+                </tr>
+                </table>
+
+
+            </div>
+        </form>
+
+        <div class="vertical-line"> </div>
+
+        <div class="tm-form2">
+            <div>
+                <p class="here">We are situated over here</p><img id="place" src="{%static 'images/location.png' %}">
+
+                <div id="map"><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.901283450411!2d73.8315089148929!3d18.53336258740157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf797c679e05%3A0x2579cb5b06c4d90b!2sSymbiosis%20Institute%20of%20Computer%20Studies%20and%20Research!5e0!3m2!1sen!2sin!4v1641149631315!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
